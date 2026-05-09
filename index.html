@@ -66,7 +66,7 @@ body{
 ══════════════════════════════════════════════════════════ */
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  height:60px;
+  height:80px;
   display:flex;align-items:center;
   transition:background .3s,border-color .3s;
 }
@@ -81,13 +81,15 @@ body{
   display:flex;align-items:center;justify-content:space-between;gap:16px;
 }
 .nav-brand{text-decoration:none;display:flex;align-items:center;gap:10px}
-.nav-brand img{height:34px;width:auto;display:block}
+.nav-brand img{height:64px;width:auto;display:block}
 .nav-links{display:none;list-style:none;gap:0}
 .nav-links a{
-  text-decoration:none;color:#555;font-size:13px;font-weight:500;
+  text-decoration:none;color:#111;font-size:13px;font-weight:500;
   padding:6px 14px;display:block;transition:color .15s;letter-spacing:.02em;
 }
-.nav-links a:hover{color:#111}
+.nav-links a:hover{color:#555}
+.nav:not(.scrolled) .nav-links a{color:rgba(255,255,255,.85)}
+.nav:not(.scrolled) .nav-links a:hover{color:#fff}
 @media(min-width:840px){.nav-links{display:flex}}
 .nav-right{display:flex;align-items:center;gap:8px}
 .lang-btn{
@@ -97,15 +99,21 @@ body{
   transition:border-color .15s,color .15s;white-space:nowrap;
 }
 .lang-btn:hover{border-color:#aaa;color:#111}
+.nav:not(.scrolled) .lang-btn{border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.8)}
+.nav:not(.scrolled) .lang-btn:hover{border-color:#fff;color:#fff}
 .nav-cta{
   display:inline-flex;align-items:center;gap:6px;
   background:#111;color:#fff;text-decoration:none;
   font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-  padding:8px 18px;border-radius:2px;transition:background .15s;white-space:nowrap;
+  padding:8px 18px;border-radius:2px;transition:background .15s,border-color .15s;white-space:nowrap;
+  border:1.5px solid #111;
 }
-.nav-cta:hover{background:#333}
+.nav-cta:hover{background:#333;border-color:#333}
+.nav:not(.scrolled) .nav-cta{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.45);color:#fff}
+.nav:not(.scrolled) .nav-cta:hover{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.7)}
 .burger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
 .burger span{display:block;width:20px;height:1.5px;background:#111;transition:transform .22s,opacity .18s}
+.nav:not(.scrolled) .burger span{background:#fff}
 .burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
@@ -246,12 +254,11 @@ body{
    SERVICES
 ══════════════════════════════════════════════════════════ */
 .services-grid{
-  display:grid;grid-template-columns:1fr;gap:1px;
-  background:#e8e8e8;border:1px solid #e8e8e8;
+  display:grid;grid-template-columns:1fr;gap:28px;
 }
 @media(min-width:700px){.services-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1060px){.services-grid{grid-template-columns:repeat(3,1fr)}}
-.svc-card{background:#fff;display:flex;flex-direction:column;position:relative}
+.svc-card{background:#fff;display:flex;flex-direction:column;position:relative;border:1px solid #e8e8e8}
 .svc-card-highlight{background:#f7f7f7}
 .svc-placeholder{
   width:100%;aspect-ratio:4/3;
@@ -289,11 +296,6 @@ body{
   text-decoration:none;transition:background .15s,border-color .15s,color .15s;margin-top:auto;
 }
 .svc-book:hover{background:#111;border-color:#111;color:#fff}
-.svc-wide-grid{
-  display:grid;grid-template-columns:1fr;gap:1px;background:#e8e8e8;
-  border:1px solid #e8e8e8;border-top:none;
-}
-@media(min-width:700px){.svc-wide-grid{grid-template-columns:1fr 1fr}}
 
 /* ══════════════════════════════════════════════════════════
    WHY
@@ -321,17 +323,15 @@ body{
    GALLERY
 ══════════════════════════════════════════════════════════ */
 .gallery-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:4px;
+  display:grid;gap:4px;
 }
-@media(min-width:640px){.gallery-grid{grid-template-columns:repeat(3,1fr)}}
-@media(min-width:1000px){.gallery-grid{grid-template-columns:repeat(4,1fr)}}
+.gallery-grid-2{grid-template-columns:1fr 1fr}
 .gallery-ph{
-  aspect-ratio:1;background:#f5f5f5;border:1.5px dashed #e0e0e0;
+  background:#f5f5f5;border:1.5px dashed #e0e0e0;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
 }
-.gallery-ph-wide{aspect-ratio:16/9;grid-column:span 2}
 .gallery-ph svg{width:22px;height:22px;stroke:#d5d5d5;stroke-width:1.5;fill:none}
-.gallery-ph-lbl{font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#d0d0d0;text-align:center;padding:0 8px}
+.gallery-ph-lbl{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#ccc;text-align:center;padding:0 8px}
 
 /* ══════════════════════════════════════════════════════════
    PRODUCTS
@@ -414,7 +414,6 @@ footer{
   <ul class="mobile-nav-links">
     <li><a href="#services" data-i18n="nav-services">Services</a></li>
     <li><a href="#gallery" data-i18n="nav-gallery">Gallery</a></li>
-    <li><a href="#why" data-i18n="nav-why">Why Elegant</a></li>
     <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
   </ul>
   <div class="mobile-nav-actions">
@@ -431,7 +430,6 @@ footer{
     <ul class="nav-links">
       <li><a href="#services" data-i18n="nav-services">Services</a></li>
       <li><a href="#gallery" data-i18n="nav-gallery">Gallery</a></li>
-      <li><a href="#why" data-i18n="nav-why">Why Elegant</a></li>
       <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -567,11 +565,8 @@ footer{
         </div>
       </div>
 
-    </div>
 
-    <!-- Nano + Tint -->
-    <div class="svc-wide-grid">
-
+      <!-- Nano + Tint -->
       <div class="svc-card reveal">
         <div class="svc-placeholder">
           <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
@@ -633,72 +628,21 @@ footer{
       <h2 class="section-title" data-i18n="gal-title">Before &amp; After</h2>
       <p class="section-lede" data-i18n="gal-lede">Owner — add your best before/after photos here.</p>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-ph gallery-ph-wide reveal">
+    <div class="gallery-grid gallery-grid-2">
+      <div class="gallery-ph reveal" style="aspect-ratio:4/3">
         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
-        <span class="gallery-ph-lbl" data-i18n="ph-wide">Add before &amp; after photo</span>
+        <span class="gallery-ph-lbl" data-i18n="ph-before">Before</span>
       </div>
-      <div class="gallery-ph reveal"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span class="gallery-ph-lbl" data-i18n="ph-photo">Add photo</span></div>
-      <div class="gallery-ph reveal" style="transition-delay:.06s"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span class="gallery-ph-lbl" data-i18n="ph-photo">Add photo</span></div>
-      <div class="gallery-ph reveal" style="transition-delay:.12s"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span class="gallery-ph-lbl" data-i18n="ph-photo">Add photo</span></div>
-      <div class="gallery-ph reveal" style="transition-delay:.06s"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span class="gallery-ph-lbl" data-i18n="ph-photo">Add photo</span></div>
-      <div class="gallery-ph reveal" style="transition-delay:.1s"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span class="gallery-ph-lbl" data-i18n="ph-photo">Add photo</span></div>
-      <div class="gallery-ph reveal" style="transition-delay:.16s"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span class="gallery-ph-lbl" data-i18n="ph-photo">Add photo</span></div>
+      <div class="gallery-ph reveal" style="aspect-ratio:4/3;transition-delay:.08s">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+        <span class="gallery-ph-lbl" data-i18n="ph-after">After</span>
+      </div>
     </div>
     <div style="text-align:center;margin-top:28px" class="reveal">
       <a href="https://instagram.com/elegant.car.center" class="btn btn-outline-dark" target="_blank" rel="noopener">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         <span data-i18n="gal-ig">@elegant.car.center</span>
       </a>
-    </div>
-  </div>
-</section>
-
-<!-- ══ WHY ══════════════════════════════════════════════════ -->
-<section class="section section-dark" id="why">
-  <div class="inner">
-    <div class="section-head reveal">
-      <div class="eyebrow"><span class="eyebrow-bar"></span><span data-i18n="why-eyebrow">Why Elegant</span></div>
-      <h2 class="section-title" data-i18n="why-title">The Difference</h2>
-    </div>
-    <div class="why-list">
-      <div class="why-item reveal">
-        <span class="why-n">01</span>
-        <span class="why-t" data-i18n="why-1-t">Certified Products</span>
-        <span class="why-d" data-i18n="why-1-d">Menzerna · Sonax · Adams. No substitutes.</span>
-      </div>
-      <div class="why-item reveal" style="transition-delay:.08s">
-        <span class="why-n">02</span>
-        <span class="why-t" data-i18n="why-2-t">Transparent Pricing</span>
-        <span class="why-d" data-i18n="why-2-d">Every price published upfront. No surprises.</span>
-      </div>
-      <div class="why-item reveal" style="transition-delay:.16s">
-        <span class="why-n">03</span>
-        <span class="why-t" data-i18n="why-3-t">Real Warranties</span>
-        <span class="why-d" data-i18n="why-3-d">3yr ceramic. 10yr tint. In writing.</span>
-      </div>
-    </div>
-
-    <!-- Products row -->
-    <div style="margin-top:52px" class="reveal">
-      <div class="eyebrow" style="margin-bottom:16px"><span class="eyebrow-bar"></span><span data-i18n="prod-eyebrow">Certified Products</span></div>
-      <div class="products-row" style="border-color:rgba(255,255,255,.08);background:rgba(255,255,255,.04)">
-        <div class="product-cell" style="background:rgba(255,255,255,.04)">
-          <span class="product-flag">🇩🇪</span>
-          <span class="product-name" style="color:#fff">Menzerna</span>
-          <span class="product-origin" style="color:rgba(255,255,255,.3)" data-i18n="prod-menzerna">Polishing compounds, Germany</span>
-        </div>
-        <div class="product-cell" style="background:rgba(255,255,255,.04)">
-          <span class="product-flag">🇩🇪</span>
-          <span class="product-name" style="color:#fff">Sonax</span>
-          <span class="product-origin" style="color:rgba(255,255,255,.3)" data-i18n="prod-sonax">Automotive care, Germany</span>
-        </div>
-        <div class="product-cell" style="background:rgba(255,255,255,.04)">
-          <span class="product-flag">🇺🇸</span>
-          <span class="product-name" style="color:#fff">Adams Polishes</span>
-          <span class="product-origin" style="color:rgba(255,255,255,.3)" data-i18n="prod-adams">Detailing chemicals, USA</span>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -752,7 +696,6 @@ footer{
       <nav class="foot-links">
         <a href="#services" data-i18n="nav-services">Services</a>
         <a href="#gallery" data-i18n="nav-gallery">Gallery</a>
-        <a href="#why" data-i18n="nav-why">Why Elegant</a>
         <a href="#contact" data-i18n="nav-contact">Contact</a>
         <a href="https://instagram.com/elegant.car.center" target="_blank" rel="noopener">Instagram</a>
         <a href="tel:+97333352996">+973 3335 2996</a>
@@ -802,6 +745,7 @@ const S = {
     'svc5-f1':'Nano-ceramic film','svc5-f2':'98% heat rejection','svc5-f3':'3-layer construction','svc5-f4':'UV blocking','svc5-f5':'10-year warranty',
     'btn-book':'Book',
     'gal-eyebrow':'Gallery','gal-title':'Before & After','gal-lede':'Owner — add your best before/after photos here.',
+    'ph-before':'Before','ph-after':'After',
     'gal-ig':'@elegant.car.center',
     'why-eyebrow':'Why Elegant','why-title':'The Difference',
     'why-1-t':'Certified Products','why-1-d':'Menzerna · Sonax · Adams. No substitutes.',
@@ -843,6 +787,7 @@ const S = {
     'svc5-f1':'فيلم نانو سيراميك','svc5-f2':'رفض ٩٨٪ للحرارة','svc5-f3':'٣ طبقات','svc5-f4':'حجب الأشعة فوق البنفسجية','svc5-f5':'ضمان ١٠ سنوات',
     'btn-book':'احجز',
     'gal-eyebrow':'معرض الأعمال','gal-title':'قبل وبعد','gal-lede':'أضف هنا أفضل صور قبل وبعد.',
+    'ph-before':'قبل','ph-after':'بعد',
     'gal-ig':'@elegant.car.center',
     'why-eyebrow':'لماذا إليغانت','why-title':'الفرق',
     'why-1-t':'منتجات معتمدة','why-1-d':'مينزيرنا · سوناكس · آدامز. بدون بدائل.',
