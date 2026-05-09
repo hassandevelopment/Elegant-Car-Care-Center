@@ -228,7 +228,7 @@ body{
 }
 .hero-photo{
   position:absolute;inset:0;
-  background:url('brand_assets/IMG_3825.jpg') center center / cover no-repeat;
+  background:url('brand_assets/IMG_3827.jpg') center center / cover no-repeat;
 }
 .hero-photo::after{
   content:'';position:absolute;inset:0;
@@ -237,7 +237,7 @@ body{
     linear-gradient(to top,#000 0%,transparent 30%);
 }
 @media(max-width:859px){
-  .hero-photo{background:url('brand_assets/IMG_3825.jpg') center top / cover no-repeat}
+  .hero-photo{background:url('brand_assets/IMG_3827.jpg') center top / cover no-repeat}
   .hero-photo::after{
     background:linear-gradient(to bottom,rgba(0,0,0,.5) 0%,rgba(0,0,0,.75) 45%,#000 75%);
   }
@@ -401,7 +401,7 @@ body{
 @media(min-width:640px){.gallery-grid{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:1000px){.gallery-grid{grid-template-columns:repeat(4,1fr)}}
 .gallery-item{
-  aspect-ratio:1;overflow:hidden;position:relative;cursor:pointer;
+  aspect-ratio:1;overflow:hidden;position:relative;
 }
 .gallery-item img{
   width:100%;height:100%;object-fit:cover;
@@ -412,6 +412,15 @@ body{
 .gallery-item:hover img{transform:scale(1.06);filter:brightness(1) saturate(1)}
 .gallery-item-wide{aspect-ratio:16/9;grid-column:span 2}
 @media(min-width:1000px){.gallery-item-wide{grid-column:span 2}}
+.gallery-placeholder{
+  width:100%;height:100%;
+  background:#0D0D0D;
+  border:1.5px dashed rgba(192,192,192,.18);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  cursor:default;
+}
+.gallery-placeholder svg{width:28px;height:28px;stroke:rgba(192,192,192,.25);stroke-width:1.5;fill:none}
+.gallery-placeholder-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(192,192,192,.25);text-align:center;padding:0 8px}
 
 /* ── Why section ─────────────────────────────────────────── */
 .why-grid{
@@ -716,7 +725,7 @@ footer{
       <!-- PROFESSIONAL POLISH -->
       <div class="svc-card reveal" style="transition-delay:.08s">
         <div class="svc-img-wrap">
-          <img src="brand_assets/IMG_3827.jpg" alt="Professional Polish service" loading="lazy">
+          <img src="brand_assets/IMG_3826.jpg" alt="Professional Polish service" loading="lazy">
         </div>
         <div class="svc-color-bar" style="background:rgba(192,192,192,.4)"></div>
         <div class="svc-body">
@@ -867,28 +876,52 @@ footer{
     </div>
     <div class="gallery-grid">
       <div class="gallery-item gallery-item-wide reveal">
-        <img src="brand_assets/IMG_3831.jpg" alt="Car detailing before and after" loading="lazy">
+        <div class="gallery-placeholder">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          <span class="gallery-placeholder-label" data-i18n="ph-wide">Add before & after photo</span>
+        </div>
       </div>
       <div class="gallery-item reveal" style="transition-delay:.06s">
-        <img src="brand_assets/IMG_3832.jpg" alt="Paint correction result" loading="lazy">
+        <div class="gallery-placeholder">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          <span class="gallery-placeholder-label" data-i18n="ph-photo">Add your photo</span>
+        </div>
       </div>
       <div class="gallery-item reveal" style="transition-delay:.1s">
-        <img src="brand_assets/IMG_3833.jpg" alt="Interior detailing" loading="lazy">
+        <div class="gallery-placeholder">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          <span class="gallery-placeholder-label" data-i18n="ph-photo">Add your photo</span>
+        </div>
       </div>
       <div class="gallery-item reveal" style="transition-delay:.06s">
-        <img src="brand_assets/IMG_3834.jpg" alt="Engine bay cleaning" loading="lazy">
+        <div class="gallery-placeholder">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          <span class="gallery-placeholder-label" data-i18n="ph-photo">Add your photo</span>
+        </div>
       </div>
       <div class="gallery-item reveal" style="transition-delay:.12s">
-        <img src="brand_assets/IMG_3835.jpg" alt="Nano ceramic coating result" loading="lazy">
+        <div class="gallery-placeholder">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          <span class="gallery-placeholder-label" data-i18n="ph-photo">Add your photo</span>
+        </div>
       </div>
       <div class="gallery-item reveal" style="transition-delay:.08s">
-        <img src="brand_assets/IMG_3836.jpg" alt="Car polish result" loading="lazy">
+        <div class="gallery-placeholder">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          <span class="gallery-placeholder-label" data-i18n="ph-photo">Add your photo</span>
+        </div>
       </div>
       <div class="gallery-item reveal" style="transition-delay:.14s">
-        <img src="brand_assets/IMG_3837.jpg" alt="Professional detailing" loading="lazy">
+        <div class="gallery-placeholder">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          <span class="gallery-placeholder-label" data-i18n="ph-photo">Add your photo</span>
+        </div>
       </div>
       <div class="gallery-item reveal" style="transition-delay:.1s">
-        <img src="brand_assets/IMG_3838.jpg" alt="Window tint" loading="lazy">
+        <div class="gallery-placeholder">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          <span class="gallery-placeholder-label" data-i18n="ph-photo">Add your photo</span>
+        </div>
       </div>
     </div>
     <div style="text-align:center;margin-top:32px" class="reveal">
@@ -910,18 +943,18 @@ footer{
     <div class="why-grid">
       <div class="why-card reveal">
         <div class="why-num">01</div>
-        <p class="why-t" data-i18n="why-1-t">Certified Products Only</p>
-        <p class="why-d" data-i18n="why-1-d">We use Menzerna (Germany), Sonax (Germany), and Adams (USA) — the same brands trusted by professional detailers worldwide. No cheap substitutes.</p>
+        <p class="why-t" data-i18n="why-1-t">Certified Products</p>
+        <p class="why-d" data-i18n="why-1-d">Menzerna · Sonax · Adams. No substitutes.</p>
       </div>
       <div class="why-card reveal" style="transition-delay:.1s">
         <div class="why-num">02</div>
         <p class="why-t" data-i18n="why-2-t">Transparent Pricing</p>
-        <p class="why-d" data-i18n="why-2-d">Every price is published upfront. No upsells at the shop, no surprise fees. What you see on this page is what you pay.</p>
+        <p class="why-d" data-i18n="why-2-d">Every price published upfront. No surprises.</p>
       </div>
       <div class="why-card reveal" style="transition-delay:.2s">
         <div class="why-num">03</div>
         <p class="why-t" data-i18n="why-3-t">Real Warranties</p>
-        <p class="why-d" data-i18n="why-3-d">3-year warranty on nano ceramic coating. 10-year warranty on window tint. These aren't marketing words — they're commitments.</p>
+        <p class="why-d" data-i18n="why-3-d">3yr ceramic. 10yr tint. In writing.</p>
       </div>
     </div>
 
@@ -1111,10 +1144,11 @@ const STRINGS = {
     'btn-book':'Book This Package',
     'gal-eyebrow':'Our Work','gal-title':'Before & After','gal-lede':'Paint correction, engine bays, interior restoration — every vehicle we touch.',
     'gal-ig':'More on Instagram @elegant.car.center',
+    'ph-wide':'Add before & after photo','ph-photo':'Add your photo',
     'why-eyebrow':'Why Choose Us','why-title':'The Elegant Difference',
-    'why-1-t':'Certified Products Only','why-1-d':'We use Menzerna (Germany), Sonax (Germany), and Adams (USA) — the same brands trusted by professional detailers worldwide. No cheap substitutes.',
-    'why-2-t':'Transparent Pricing','why-2-d':'Every price is published upfront. No upsells at the shop, no surprise fees. What you see on this page is what you pay.',
-    'why-3-t':'Real Warranties','why-3-d':'3-year warranty on nano ceramic coating. 10-year warranty on window tint. These aren\'t marketing words — they\'re commitments.',
+    'why-1-t':'Certified Products','why-1-d':'Menzerna · Sonax · Adams. No substitutes.',
+    'why-2-t':'Transparent Pricing','why-2-d':'Every price published upfront. No surprises.',
+    'why-3-t':'Real Warranties','why-3-d':'3yr ceramic. 10yr tint. In writing.',
     'prod-eyebrow':'Certified Products',
     'prod-menzerna':'German precision polishing compounds. The benchmark for professional paint correction.',
     'prod-sonax':'German automotive care. Trusted by detailers across 100+ countries for 70+ years.',
@@ -1160,10 +1194,11 @@ const STRINGS = {
     'btn-book':'احجز هذه الباقة',
     'gal-eyebrow':'أعمالنا','gal-title':'قبل وبعد','gal-lede':'تصحيح الطلاء، غرف المحرك، إعادة تأهيل المقصورة — كل سيارة نلمسها.',
     'gal-ig':'المزيد على إنستغرام @elegant.car.center',
+    'ph-wide':'أضف صورة قبل وبعد','ph-photo':'أضف صورتك هنا',
     'why-eyebrow':'لماذا نختارنا','why-title':'الفرق الإليغانت',
-    'why-1-t':'منتجات معتمدة فقط','why-1-d':'نستخدم مينزيرنا (ألمانيا) وسوناكس (ألمانيا) وآدامز (أمريكا) — نفس الماركات التي يثق بها محترفو التفصيل حول العالم.',
-    'why-2-t':'أسعار شفافة','why-2-d':'كل سعر منشور مسبقاً. لا إضافات مفاجئة. ما تراه على هذه الصفحة هو ما تدفعه.',
-    'why-3-t':'ضمانات حقيقية','why-3-d':'ضمان ٣ سنوات على طلاء النانو سيراميك. ضمان ١٠ سنوات على التظليل. ليست كلام تسويق — إنها التزامات.',
+    'why-1-t':'منتجات معتمدة','why-1-d':'مينزيرنا · سوناكس · آدامز. بدون بدائل.',
+    'why-2-t':'أسعار شفافة','why-2-d':'كل سعر منشور مسبقاً. بدون مفاجآت.',
+    'why-3-t':'ضمانات حقيقية','why-3-d':'٣ سنوات سيراميك. ١٠ سنوات تظليل. كتابةً.',
     'prod-eyebrow':'المنتجات المعتمدة',
     'prod-menzerna':'مركبات تلميع دقيقة ألمانية. المعيار المرجعي للتصحيح الاحترافي للطلاء.',
     'prod-sonax':'عناية سيارات ألمانية. موثوق بها من قِبل المفصلين في أكثر من ١٠٠ دولة لأكثر من ٧٠ عاماً.',
